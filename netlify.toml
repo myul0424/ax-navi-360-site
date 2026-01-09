@@ -1,0 +1,14 @@
+# Netlify configuration for AX Instructor Hub
+
+[build]
+  # Publish the root directory. Netlify will automatically serve index.html.
+  publish = "."
+
+  # No build command is needed because this is a static site using CDN resources.
+  command = ""
+
+[[redirects]]
+  # Catch-all redirect to support client-side routing anchors
+  from = "/*"
+  to = "/index.html"
+  status = 200
