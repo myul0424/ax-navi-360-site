@@ -1,222 +1,231 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AX Instructor Hub</title>
-  <!-- Google Fonts: Pretendard and fallback Noto Sans KR for Korean typography -->
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AX Navi 360 | 전남·전북 역량혁신팀</title>
+  <!-- Google Font -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@400;500;700&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
-  <!-- Tailwind CSS via CDN (v3) -->
-  <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
-  <script>
-    /* Configure Tailwind colours and fonts to match the professional palette */
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            primary: '#E6002D',
-            dark: '#1F2937',
-            lightBG: '#F9FAFB'
-          },
-          fontFamily: {
-            sans: ['Pretendard', 'Noto Sans KR', 'sans-serif']
-          }
-        }
-      }
-    }
-  </script>
-  <!-- Font Awesome Icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-pQ7EL9QV2q3tEZkRuA8y6VPlV3z1wcE7nxn9KyHbuVkxkPXYv1vBuUH6jMyIycLgeYuYyNJUK2Zq4IWajlzYKg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;600;700&display=swap" rel="stylesheet">
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- FontAwesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
   <style>
-    /* Apply a subtle backdrop blur for the sticky header */
-    .backdrop-blur {
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-    }
-    /* Toast animations: slide in then fade out */
-    .toast {
-      animation: slideIn 0.3s ease-out, fadeOut 0.3s ease-in forwards 3s;
-    }
-    @keyframes slideIn {
-      from { transform: translateY(100%); opacity: 0; }
-      to { transform: translateY(0); opacity: 1; }
-    }
-    @keyframes fadeOut {
-      from { opacity: 1; }
-      to { opacity: 0; }
-    }
+    body { font-family: 'Noto Sans KR', sans-serif; }
   </style>
 </head>
-<body class="bg-lightBG text-dark font-sans">
-  <!-- Header with logo and navigation -->
-  <header class="fixed top-0 left-0 w-full z-20 bg-white/80 backdrop-blur shadow-sm">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
-      <h1 class="text-xl font-bold text-dark"><span class="text-primary font-extrabold">AX</span> Instructor&nbsp;Hub</h1>
-      <nav class="space-x-4 text-sm font-medium">
-        <a href="#home" class="text-dark hover:text-primary">Home</a>
-        <a href="#tools" class="text-dark hover:text-primary">Tools</a>
-        <a href="#library" class="text-dark hover:text-primary">Prompt&nbsp;Library</a>
-        <a href="#submit" class="text-dark hover:text-primary">Submit</a>
-      </nav>
-    </div>
-  </header>
+<body class="bg-gray-900 text-gray-100">
 
-  <main class="pt-20">
-    <!-- Hero Section -->
-    <section id="home" class="relative isolate overflow-hidden">
-      <!-- Decorative gradient background to evoke technological energy -->
-      <div class="absolute inset-0 -z-10">
-        <div class="bg-gradient-to-br from-primary via-red-800 to-dark opacity-30 w-full h-full"></div>
+  <!-- Hero -->
+  <section class="text-center py-16 px-6">
+    <h1 class="text-4xl font-extrabold mb-4">
+      AX Navi 360
+    </h1>
+    <h2 class="text-xl text-gray-400 mb-2">
+      전남·전북 역량혁신팀
+    </h2>
+    <p class="mb-6 text-lg text-gray-300">
+      AI에게 질문만 하면 교육·영업·매장에서 바로 쓰는 PPT가 완성됩니다
+    </p>
+  </section>
+
+  <!-- Tool bar -->
+  <section class="max-w-5xl mx-auto px-6 mb-12">
+    <div class="grid grid-cols-5 gap-4">
+      <div class="text-center py-2 bg-gray-800 rounded-lg shadow">
+        ChatGPT
       </div>
-      <div class="max-w-7xl mx-auto px-4 py-24 sm:py-32 text-center">
-        <h2 class="text-4xl sm:text-5xl font-bold mb-4">강의의 질을 높이는 <span class="text-primary">AI 파트너</span></h2>
-        <p class="text-lg sm:text-xl text-gray-700 mb-8">검증된 <span class="font-semibold">Gemini</span> 프롬프트와 <span class="font-semibold">NotebookLM</span> 활용법을 즉시 확인하세요.</p>
-        <a href="#library" class="inline-block px-8 py-3 bg-primary text-white font-semibold rounded-md shadow hover:bg-red-700 transition">프롬프트 바로가기</a>
+      <div class="text-center py-2 bg-gray-800 rounded-lg shadow">
+        Gemini
       </div>
-    </section>
-
-    <!-- Tool Quick Links Section -->
-    <section id="tools" class="max-w-7xl mx-auto px-4 py-16">
-      <h3 class="text-2xl font-bold mb-8">주요 도구</h3>
-      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-        <!-- NotebookLM Card -->
-        <div class="flex items-center justify-between bg-white rounded-lg shadow p-5 hover:shadow-md transition">
-          <div class="flex items-center space-x-3">
-            <i class="fa-solid fa-book-open text-primary text-2xl"></i>
-            <span class="font-medium">NotebookLM</span>
-          </div>
-          <a href="https://notebooklm.google.com/" target="_blank" class="px-3 py-1 text-sm bg-primary text-white rounded hover:bg-red-700 transition">바로가기</a>
-        </div>
-        <!-- Gemini Card -->
-        <div class="flex items-center justify-between bg-white rounded-lg shadow p-5 hover:shadow-md transition">
-          <div class="flex items-center space-x-3">
-            <i class="fa-solid fa-brain text-primary text-2xl"></i>
-            <span class="font-medium">Gemini</span>
-          </div>
-          <a href="https://gemini.google.com/" target="_blank" class="px-3 py-1 text-sm bg-primary text-white rounded hover:bg-red-700 transition">바로가기</a>
-        </div>
-        <!-- Gamma Card -->
-        <div class="flex items-center justify-between bg-white rounded-lg shadow p-5 hover:shadow-md transition">
-          <div class="flex items-center space-x-3">
-            <i class="fa-solid fa-chart-line text-primary text-2xl"></i>
-            <span class="font-medium">Gamma</span>
-          </div>
-          <a href="https://gamma.app/" target="_blank" class="px-3 py-1 text-sm bg-primary text-white rounded hover:bg-red-700 transition">바로가기</a>
-        </div>
-        <!-- MS Copilot Card -->
-        <div class="flex items-center justify-between bg-white rounded-lg shadow p-5 hover:shadow-md transition">
-          <div class="flex items-center space-x-3">
-            <i class="fa-brands fa-microsoft text-primary text-2xl"></i>
-            <span class="font-medium">MS&nbsp;Copilot</span>
-          </div>
-          <a href="https://copilot.microsoft.com/" target="_blank" class="px-3 py-1 text-sm bg-primary text-white rounded hover:bg-red-700 transition">바로가기</a>
-        </div>
+      <div class="text-center py-2 bg-gray-800 rounded-lg shadow">
+        Canva
       </div>
-    </section>
-
-    <!-- Prompt Library Section -->
-    <section id="library" class="max-w-7xl mx-auto px-4 py-16">
-      <h3 class="text-2xl font-bold mb-8">프롬프트 라이브러리</h3>
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        <!-- Card 1: PPT 구조 설계 -->
-        <div class="bg-white rounded-lg shadow hover:shadow-md transition p-6 flex flex-col justify-between">
-          <div>
-            <span class="text-xs font-semibold text-primary uppercase">PPT 구조 설계</span>
-            <h4 class="mt-2 font-bold text-lg">10장 분량의 AI 발표 구성</h4>
-            <p class="mt-2 text-sm text-gray-600">Gemini에게 주어진 주제에 대해 10장짜리 슬라이드 구조를 표 형태로 작성해 달라고 요청합니다.</p>
-          </div>
-          <button onclick="copyPrompt(event, `다음의 주제로 10장 분량의 발표 자료 구성을 표로 작성해줘: [주제 입력]. 각 슬라이드는 제목과 핵심 내용을 포함하고, 슬라이드 순서도 제시해줘.`)" class="mt-4 inline-flex items-center self-start px-4 py-2 text-sm bg-primary text-white rounded hover:bg-red-700 transition">
-            <i class="fa-regular fa-copy mr-2"></i> 복사
-          </button>
-        </div>
-        <!-- Card 2: 강의 시나리오 -->
-        <div class="bg-white rounded-lg shadow hover:shadow-md transition p-6 flex flex-col justify-between">
-          <div>
-            <span class="text-xs font-semibold text-primary uppercase">강의 시나리오</span>
-            <h4 class="mt-2 font-bold text-lg">초보자용 비유 설명 생성</h4>
-            <p class="mt-2 text-sm text-gray-600">어려운 개념을 초보자에게 이해시키기 위해 일상 생활의 비유를 활용한 스크립트를 생성하도록 요청합니다.</p>
-          </div>
-          <button onclick="copyPrompt(event, `아래 주제를 초보자도 이해할 수 있도록 친숙한 일상 비유를 사용해 설명하는 강의 시나리오를 작성해줘. 이야기 흐름과 핵심 포인트를 포함해줘.\n\n주제: [주제 입력]`)" class="mt-4 inline-flex items-center self-start px-4 py-2 text-sm bg-primary text-white rounded hover:bg-red-700 transition">
-            <i class="fa-regular fa-copy mr-2"></i> 복사
-          </button>
-        </div>
-        <!-- Card 3: 이미지 생성 -->
-        <div class="bg-white rounded-lg shadow hover:shadow-md transition p-6 flex flex-col justify-between">
-          <div>
-            <span class="text-xs font-semibold text-primary uppercase">이미지 생성</span>
-            <h4 class="mt-2 font-bold text-lg">AI 일러스트 의뢰</h4>
-            <p class="mt-2 text-sm text-gray-600">DALL‑E 3 또는 Gemini에게 시각적 일러스트를 생성하는 데 필요한 명확한 프롬프트를 작성하는 예시입니다.</p>
-          </div>
-          <button onclick="copyPrompt(event, `다음 설명을 바탕으로 고해상도 일러스트를 생성해줘. 세부 묘사, 분위기, 색상 팔레트를 포함해줄 것. 한국어로 작성해줘.\n\n설명: [설명 입력]`)" class="mt-4 inline-flex items-center self-start px-4 py-2 text-sm bg-primary text-white rounded hover:bg-red-700 transition">
-            <i class="fa-regular fa-copy mr-2"></i> 복사
-          </button>
-        </div>
+      <div class="text-center py-2 bg-gray-800 rounded-lg shadow">
+        Copilot
       </div>
-    </section>
-
-    <!-- Submission Section using Netlify forms -->
-    <section id="submit" class="max-w-7xl mx-auto px-4 py-16">
-      <h3 class="text-2xl font-bold mb-8">프롬프트 제출</h3>
-      <form name="prompt-submission" method="POST" data-netlify="true" class="grid grid-cols-1 gap-6 bg-white p-6 rounded-lg shadow">
-        <div>
-          <label for="name" class="block font-medium mb-1">이름</label>
-          <input type="text" id="name" name="name" class="w-full border-gray-300 rounded-md focus:ring-primary focus:border-primary" required>
-        </div>
-        <div>
-          <label for="title" class="block font-medium mb-1">프롬프트 제목</label>
-          <input type="text" id="title" name="title" class="w-full border-gray-300 rounded-md focus:ring-primary focus:border-primary" required>
-        </div>
-        <div>
-          <label for="content" class="block font-medium mb-1">내용</label>
-          <textarea id="content" name="content" rows="4" class="w-full border-gray-300 rounded-md focus:ring-primary focus:border-primary" required></textarea>
-        </div>
-        <button type="submit" class="inline-flex items-center justify-center px-6 py-2 bg-primary text-white rounded-md hover:bg-red-700 transition">
-          <i class="fa-regular fa-paper-plane mr-2"></i> 제출
-        </button>
-      </form>
-    </section>
-  </main>
-
-  <!-- Footer -->
-  <footer class="bg-white mt-12 border-t">
-    <div class="max-w-7xl mx-auto px-4 py-6 flex flex-col sm:flex-row justify-between text-sm text-gray-600">
-      <p>&copy; 2026 AX Instructor&nbsp;Hub. All rights reserved.</p>
-      <div class="flex space-x-4 mt-2 sm:mt-0">
-        <a href="#home" class="hover:text-primary">Home</a>
-        <a href="#tools" class="hover:text-primary">Tools</a>
-        <a href="#library" class="hover:text-primary">Prompt&nbsp;Library</a>
-        <a href="#submit" class="hover:text-primary">Submit</a>
+      <div class="text-center py-2 bg-gray-800 rounded-lg shadow">
+        NotebookLM
       </div>
     </div>
-  </footer>
+  </section>
 
-  <!-- Toast notification container positioned at bottom-right -->
-  <div id="toast-container" class="fixed bottom-4 right-4 space-y-2"></div>
+  <!-- Prompt Library -->
+  <section class="max-w-5xl mx-auto px-6 pb-20">
+    <h3 class="text-3xl font-bold mb-6">Prompt Library</h3>
 
-  <!-- JavaScript for copy-to-clipboard and toast notifications -->
+    <!-- AX Education PPT Section -->
+    <div class="mb-12">
+      <h4 class="text-2xl font-semibold mb-4">📊 AX 교육용 PPT</h4>
+      <div class="grid md:grid-cols-3 gap-8">
+
+        <!-- Card 1: AX Overview -->
+        <div class="bg-gray-800 rounded-xl overflow-hidden shadow-lg">
+          <img src="https://placehold.co/600x400?text=AX+Overview+PPT" alt="AX Overview PPT" class="w-full h-40 object-cover">
+          <div class="p-6">
+            <p class="text-xs text-red-400 mb-2">AX · Education PPT</p>
+            <h5 class="font-semibold text-lg mb-2">AX 한 장 요약 PPT</h5>
+            <p class="text-sm text-gray-400 mb-4">
+              이런 AX 요약 PPT를 만들고 싶다면 아래 프롬프트를 그대로 복사해 AI에게 질문하세요.
+            </p>
+            <button onclick="copyPrompt(event, 'ax_overview')" class="w-full bg-red-600 hover:bg-red-700 text-white py-2 rounded transition">
+              Copy Prompt
+            </button>
+            <textarea id="ax_overview" class="hidden">
+You are an infographic designer. Create a one-slide PPT that summarizes AI Transformation (AX) for employees. Use a dark background with red accents, place one strong central message in the middle, surround it with 4 key concepts (People, Process, Data, AI) using icons, and keep text minimal. Ensure it is polished and ready for corporate presentations.
+            </textarea>
+          </div>
+        </div>
+
+        <!-- Card 2: Human + AI Roles -->
+        <div class="bg-gray-800 rounded-xl overflow-hidden shadow-lg">
+          <img src="https://placehold.co/600x400?text=Human+AI+Roles+PPT" alt="Human and AI Roles" class="w-full h-40 object-cover">
+          <div class="p-6">
+            <p class="text-xs text-red-400 mb-2">AX · Education PPT</p>
+            <h5 class="font-semibold text-lg mb-2">Human + AI 역할 분담 PPT</h5>
+            <p class="text-sm text-gray-400 mb-4">
+              사람과 AI의 역할을 비교하는 PPT를 만들고 싶다면 아래 프롬프트를 복사하세요.
+            </p>
+            <button onclick="copyPrompt(event, 'human_ai')" class="w-full bg-red-600 hover:bg-red-700 text-white py-2 rounded transition">
+              Copy Prompt
+            </button>
+            <textarea id="human_ai" class="hidden">
+Design a two-column PPT slide comparing human roles with AI roles in the workplace. The left column should illustrate human strengths such as judgment and creativity, and the right column should show AI strengths like speed and automation. Use minimal text and clear icons, maintaining a professional corporate style.
+            </textarea>
+          </div>
+        </div>
+
+        <!-- Card 3: AX Journey Roadmap -->
+        <div class="bg-gray-800 rounded-xl overflow-hidden shadow-lg">
+          <img src="https://placehold.co/600x400?text=AX+Roadmap+PPT" alt="AX Roadmap PPT" class="w-full h-40 object-cover">
+          <div class="p-6">
+            <p class="text-xs text-red-400 mb-2">AX · Education PPT</p>
+            <h5 class="font-semibold text-lg mb-2">AX Journey Roadmap PPT</h5>
+            <p class="text-sm text-gray-400 mb-4">
+              AX 여정을 5단계로 보여주는 PPT를 만들고 싶다면 아래 프롬프트를 복사하세요.
+            </p>
+            <button onclick="copyPrompt(event, 'ax_roadmap')" class="w-full bg-red-600 hover:bg-red-700 text-white py-2 rounded transition">
+              Copy Prompt
+            </button>
+            <textarea id="ax_roadmap" class="hidden">
+Create a step-by-step roadmap PPT for the AI Transformation (AX) journey. Include five stages: Awareness, Tool Adoption, Data Utilization, AI Integration, and Continuous Innovation. Use a horizontal flow layout with icons for each stage and keep the design clean and corporate-friendly.
+            </textarea>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Mobile & Sales PPT Section -->
+    <div>
+      <h4 class="text-2xl font-semibold mb-4">📱 휴대폰 · 요금제 · 상품판매 PPT</h4>
+      <div class="grid md:grid-cols-3 gap-8">
+
+        <!-- Mobile Card 1: Plan Comparison -->
+        <div class="bg-gray-800 rounded-xl overflow-hidden shadow-lg">
+          <img src="https://placehold.co/600x400?text=Plan+Comparison+PPT" alt="Plan Comparison" class="w-full h-40 object-cover">
+          <div class="p-6">
+            <p class="text-xs text-blue-400 mb-2">Mobile · Sales PPT</p>
+            <h5 class="font-semibold text-lg mb-2">요금제 한 장 비교 PPT</h5>
+            <p class="text-sm text-gray-400 mb-4">
+              매장에서 요금제를 설명할 한 장 PPT를 만들고 싶다면 이 프롬프트를 복사하세요.
+            </p>
+            <button onclick="copyPrompt(event, 'plan_comparison')" class="w-full bg-red-600 hover:bg-red-700 text-white py-2 rounded transition">
+              Copy Prompt
+            </button>
+            <textarea id="plan_comparison" class="hidden">
+Design a one-slide PPT comparing three mobile plans. Use a card-style layout, focus on price, data, and key benefits, and keep the design modern with dark backgrounds and bold accent colors. Ensure clarity and readability for in-store sales presentations.
+            </textarea>
+          </div>
+        </div>
+
+        <!-- Mobile Card 2: Smartphone Feature Highlight -->
+        <div class="bg-gray-800 rounded-xl overflow-hidden shadow-lg">
+          <img src="https://placehold.co/600x400?text=Smartphone+Highlights+PPT" alt="Smartphone Highlights" class="w-full h-40 object-cover">
+          <div class="p-6">
+            <p class="text-xs text-blue-400 mb-2">Mobile · Sales PPT</p>
+            <h5 class="font-semibold text-lg mb-2">신형 스마트폰 포인트 PPT</h5>
+            <p class="text-sm text-gray-400 mb-4">
+              신형 스마트폰의 핵심 포인트를 보여주는 PPT를 만들고 싶다면 이 프롬프트를 복사하세요.
+            </p>
+            <button onclick="copyPrompt(event, 'smartphone_highlight')" class="w-full bg-red-600 hover:bg-red-700 text-white py-2 rounded transition">
+              Copy Prompt
+            </button>
+            <textarea id="smartphone_highlight" class="hidden">
+Create a single-slide PPT highlighting a new smartphone. Place the phone image in the center, and arrange 4–5 key features (camera, battery, performance, AI, design) around it. Use a premium and modern style with minimal text suitable for product launch presentations.
+            </textarea>
+          </div>
+        </div>
+
+        <!-- Mobile Card 3: Customer Persona Recommendations -->
+        <div class="bg-gray-800 rounded-xl overflow-hidden shadow-lg">
+          <img src="https://placehold.co/600x400?text=Customer+Persona+PPT" alt="Customer Persona" class="w-full h-40 object-cover">
+          <div class="p-6">
+            <p class="text-xs text-blue-400 mb-2">Mobile · Sales PPT</p>
+            <h5 class="font-semibold text-lg mb-2">고객 유형별 추천 PPT</h5>
+            <p class="text-sm text-gray-400 mb-4">
+              고객별 추천 제품을 보여주는 PPT를 만들고 싶다면 이 프롬프트를 복사하세요.
+            </p>
+            <button onclick="copyPrompt(event, 'customer_persona')" class="w-full bg-red-600 hover:bg-red-700 text-white py-2 rounded transition">
+              Copy Prompt
+            </button>
+            <textarea id="customer_persona" class="hidden">
+Design a customer persona PPT slide for mobile product sales. Include 3–4 customer types such as students, business users, seniors, and content creators. For each persona, recommend a suitable phone and plan, using a friendly yet professional visual style.
+            </textarea>
+          </div>
+        </div>
+
+        <!-- Mobile Card 4: Sales Cheat Sheet -->
+        <div class="bg-gray-800 rounded-xl overflow-hidden shadow-lg">
+          <img src="https://placehold.co/600x400?text=Sales+Cheat+Sheet+PPT" alt="Sales Cheat Sheet" class="w-full h-40 object-cover">
+          <div class="p-6">
+            <p class="text-xs text-blue-400 mb-2">Mobile · Sales PPT</p>
+            <h5 class="font-semibold text-lg mb-2">매장 상담 치트키 PPT</h5>
+            <p class="text-sm text-gray-400 mb-4">
+              매장에서 바로 사용할 치트키 PPT를 만들고 싶다면 아래 프롬프트를 복사하세요.
+            </p>
+            <button onclick="copyPrompt(event, 'sales_cheat_sheet')" class="w-full bg-red-600 hover:bg-red-700 text-white py-2 rounded transition">
+              Copy Prompt
+            </button>
+            <textarea id="sales_cheat_sheet" class="hidden">
+Create a one-slide cheat sheet PPT for in-store mobile sales consultations. Use concise keywords and simple icons to highlight key selling points. Make the layout practical and easy to scan during conversations with customers.
+            </textarea>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </section>
+
+  <!-- Toast Notification Container -->
+  <div id="toast-container" class="fixed bottom-4 right-4 space-y-2 z-50"></div>
+
+  <!-- Scripts -->
   <script>
-    function copyPrompt(event, text) {
+    function copyPrompt(event, id) {
       event.preventDefault();
-      // Attempt to copy text to clipboard
-      navigator.clipboard.writeText(text).then(function() {
-        showToast('프롬프트가 복사되었습니다!');
-      }).catch(function() {
+      const text = document.getElementById(id).value;
+      navigator.clipboard.writeText(text).then(() => {
+        showToast('프롬프트가 복사되었습니다.');
+      }).catch(() => {
         showToast('복사에 실패했습니다.');
       });
     }
+
     function showToast(message) {
       const container = document.getElementById('toast-container');
       const toast = document.createElement('div');
-      toast.className = 'toast px-4 py-2 bg-dark text-white rounded shadow';
+      toast.className = 'px-4 py-2 bg-gray-800 text-white rounded shadow';
       toast.textContent = message;
       container.appendChild(toast);
-      // Remove toast after animation completes (~3.5s)
       setTimeout(() => {
         toast.remove();
       }, 3500);
     }
   </script>
+
 </body>
 </html>
